@@ -8,7 +8,7 @@ Chance Murphy
 
 ## Project Description
 
-As of now this program scrapes the IMDB page https://www.imdb.com/search/title?title_type=feature,&num_votes=1000,&languages=en&sort=user_rating,desc and gives me the data for the movie title, release date, run time, MPAA rating, IMDB rating, and Metascore. I still need to successfully scrape the data for the director and box office total. Director is proving to be tricky because it is located inside of <p> tag with no class while box office total is proving to be tricky because it is located in a <span> tag that also contains the total votes it has received on IMDB. The search URL is cached in my cache diction so that if a search is repeated I won't make multiple requests for the same data.
+As of now this program scrapes the IMDB page https://www.imdb.com/search/title?title_type=feature,&num_votes=1000,&languages=en&sort=user_rating,desc and gives me the data for the movie title, release date, run time, MPAA rating, IMDB rating, and Metascore. I still need to successfully scrape the data for the director and box office total. Director is proving to be tricky because it is located inside of paragraph tag with no class while box office total is proving to be tricky because it is located in a span tag that also contains the total votes it has received on IMDB. The search URL is cached in my cache diction so that if a search is repeated I won't make multiple requests for the same data.
 
 I still need to...
 - Clean the data
