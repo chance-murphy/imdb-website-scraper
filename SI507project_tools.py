@@ -7,6 +7,9 @@ import codecs
 import sys
 sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer)
 
+import random
+from itertools import product, permutations
+
 import pandas as pd
 import csv
 
@@ -315,6 +318,22 @@ def add_to_db():
         session.add(rating)
         session.commit()
 
+# def random_movie():
+#     movies = Movies.query.all()
+#     numbers = list(range(1,50))
+#     random.shuffle(numbers)
+#     number = numbers[34]
+#     movie = movies[number]
+#     movies_str= list(map(lambda x: str(x), movie))
+#
+#     return movies_str
+
+# movies = Movies.query.all()
+# movies_lst = list(movies)
+# random.shuffle(movies_lst)
+# movie = permutations(movies_lst, 1)
+# movies_str= list(map(lambda x: str(x), movie))
+# random(movies_str)
 
 @app.route('/')
 def index():
@@ -324,12 +343,16 @@ def index():
 def search():
     return render_template('search.html')
 
+# @app.route('/random')
+# def random(movies_str):
+#     return render_template('random.html', results = movies_str)
+
 @app.route('/search_results')
 def results():
     if request.method == 'GET':
         keyword = request.args.get('keyword')
         # no = request.args.get('no')
-        keyword = keyword if keyword else 'End Game'
+        keyword = keyword if keyword else 'Endgame'
         # no = no if no else 10  # use 10 as default value
         results = session.query(Movies).all()
         results_lst = []
