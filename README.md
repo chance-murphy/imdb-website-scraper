@@ -8,19 +8,28 @@ Chance Murphy
 
 ## Project Description
 
-As of now this program scrapes the IMDB page https://www.imdb.com/search/title?title_type=feature,&num_votes=1000,&languages=en&sort=user_rating,desc and gives me the data for the movie title, release date, run time, MPAA rating, IMDB rating, and Metascore. I still need to successfully scrape the data for the director and box office total. Director is proving to be tricky because it is located inside of paragraph tag with no class while box office total is proving to be tricky because it is located in a span tag that also contains the total votes it has received on IMDB. The search URL is cached in my cache diction so that if a search is repeated I won't make multiple requests for the same data.
+This program has scraped the IMDB website to find the 50 movies with the highest IMDB ratings of all time. The program will cache the html of the IMDB search results page so that too many requests of the IMDB websites are not made. Once the data is cached, the HTML code is parsed with BeautifulSoup in order to pull out the data relating to each movie we want from the website. As the data is sifted through, it is cleaned to prevent empty cells in the CSV. With out data now sorted, located and cleaned Pandas is used to send the data to a CSV file. From here a function called "add_to_db" is called to open the CSV file and read the data into our database.
 
-I still need to...
-- Clean the data
-- Upload the cleaned data to a CSV (This is all set up, the data just needs to be cleaned first)
-- Upload the data to my db tables
-- Create app routes to display data to the user
-- Set up HTML template so that I can base search based on user input
-- Figure out how to edit the URL so that user input can be used in the scrape (I have a pretty good idea of how to do this, it's a matter of trial and error at this point)
+Now that all of the data is in the database, flask routes are used to display the data to the user. The routes allow the user to search the database for movies or directors as well as view all of the movies. Users can either view information about the movie (such as runtime, box office, release date, genre, etc.) or information about the movies IMDB or Metascore rating.
 
 ## How to run
 
-1. ...
+1. Download all files from this Github repository.
+2. Locate the zip file in your downloads folder and move it to a location easy to remeber, such as your desktop.
+3. Open Terminal
+4. Navigate to the folder
+5. Create a virtual enviornament
+  - In order to do this type in the following commands into your command prompt/terminal window.
+    1. python3 -m venv imbdScraper-env
+    2. source imbdScraper-env/bin/activate for Mac/Linux OR source imbdScraper-env/Scripts/activate for Windows
+    3. pip install -r requirements.txt
+6. Once you have installed the requirements you can then run your flask app by typing in...
+  - python SI507project_tools.py runserver
+7. From here you'll be prompted and given a local host address. Copy this into a web
+and you can then freely run the flask app. Addresses you can enter into the local
+host url are as follows.
+  - http://localhost:5000/
+
 
 ## How to use
 
@@ -30,7 +39,12 @@ I still need to...
 - Undecided as of now
 
 ## How to run tests
-1. Undecided as of now
+1. Download all required files
+2. Open Terminal
+3. Navigate to file location of "SI507project_tests.py"
+4. Make sure "SI507project_tools.py" is also there
+5. Type "python SI507project_tests.py" into Terminal
+6. The file will run the tests.
 
 ## In this repository:
 - SI507project_tools.py
@@ -54,7 +68,7 @@ Below is a list of the requirements listed in the rubric for you to copy and pas
 - [X] Includes a sample .sqlite/.db file
 - [X] Includes a diagram of your database schema
 - [X] Includes EVERY file needed in order to run the project
-- [ ] Includes screenshots and/or clear descriptions of what your project should look like when it is working
+- [X] Includes screenshots and/or clear descriptions of what your project should look like when it is working
 
 ### Flask Application
 - [X] Includes at least 3 different routes
@@ -64,7 +78,7 @@ Below is a list of the requirements listed in the rubric for you to copy and pas
 - [X] Information stored in the database is viewed or interacted with in some way
 
 ### Additional Components (at least 6 required)
-- [ ] Use of a new module
+- [X] Use of a new module
 - [ ] Use of a second new module
 - [ ] Object definitions using inheritance (indicate if this counts for 2 or 3 of the six requirements in a parenthetical)
 - [ ] A many-to-many relationship in your database structure
