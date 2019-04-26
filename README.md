@@ -49,11 +49,12 @@ This program is meant to be used to find movies from the IMDB top 50 that you wo
 
 ## How to run tests
 1. Download all required files
-2. Open Terminal
-3. Navigate to file location of "SI507project_tests.py"
-4. Make sure "SI507project_tools.py" is also there
-5. Type "python SI507project_tests.py" into Terminal
-6. The file will run the tests.
+2. Complete "How to run" section above"
+3. Open Terminal
+4. Navigate to file location of "SI507project_tests.py"
+5. Make sure "SI507project_tools.py" is also there
+6. Type "python SI507project_tests.py" into Terminal
+7. The file will run the tests.
 
 ## In this repository:
 - SI507project_tools.py
