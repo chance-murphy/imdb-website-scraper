@@ -33,10 +33,19 @@ host url are as follows.
 
 ## How to use
 
-1. ...
+This program is meant to be used to find movies from the IMDB top 50 that you would like to watch. It could be a big summer blockbuster, or it could be a small time foreign language film. The hope is that by giving users a comprehensive list of movies to browse, they will watch a movie that they might not have otherwise had the thought to watch.
 
 ## Routes in this application
-- Undecided as of now
+- http://localhost:5000/
+  - Homepage of the flask app, meant to introduce the system to the users.
+- http://localhost:5000/search
+  - Allows the user to search movies or directors within the database.
+- http://localhost:5000/search_results
+  - Displays the results of the search.
+- http://localhost:5000/movies
+  - Shows a general overview of each of the movies in the database.
+- http://localhost:5000/ratings
+  - Shows a general overview of the ratings for each movie in the database.
 
 ## How to run tests
 1. Download all required files
@@ -49,7 +58,13 @@ host url are as follows.
 ## In this repository:
 - SI507project_tools.py
 - SI507project_tests.py
+- requirments.txt
 - README.md
+- db_diagram.jpg
+- sample_movie_info.csv
+- sample_movies_results.db
+- sample_movies_search_cache.json
+- Template file containing the HTML templates used in the Flask App.
 
 ---
 ## Code Requirements for Grading
